@@ -1,0 +1,43 @@
+{% load static%}
+<!DOCTYPE html>
+    <head>
+        <meta charset='UTF-8'>
+        <title>
+            打印分类结果
+        </title>
+        <style>
+            body 
+            {   
+                margin: 0px;
+                background-image: url("{% static 'pics/bg2.png' %}");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                background-attachment:fixed;
+            }
+            section
+            {
+                padding-top: 120px;
+                text-align: center;
+                font-size: 20px;
+            }            
+        </style>        
+    </head>
+    <body>
+        <section>
+            <font color='red'><b>成功完成预测分类！</b></font><br>
+            <br>
+            {% if flag is not None %}
+                <b>预测结果的macro_f1得分：<font color='red'>{{score}}</b></font><br>
+            {% else %}
+                <b>经检测上传数据不存在标签列</b><br>
+            {% endif %}
+            <br>
+            <a href="{% url 'test_downloading' %}" target='_blank'><b>下载分类结果文件</b></a><br>
+            <a href="{% url 'test_visualization' %}" target='_blank'><b>查看预测分类情况</b></a><br><br>
+            <font color='blue'>如下是所有预测分类结果：</font><br><br>
+            {% for key,value in dict.items %}
+                <li>第{{key}}个样本的<b>故障类型</b>为 : <font color='red'>{{value}}</font></li><br>
+            {% endfor %}
+        </section>
+    </body>
+</html>

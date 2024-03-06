@@ -1,0 +1,38 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>上传测试文件</title>
+        <style>
+            body 
+            {   
+                margin: 0px;
+                background-image: url("{% static 'pics/bg2.png' %}");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                background-attachment:fixed;
+            }
+            section
+            {
+                padding-top: 120px;
+                text-align: center;
+                font-size: 20px;
+            }
+            input
+            {
+                width: 200px;
+                height: 50px;
+            }
+        </style>        
+    </head>
+    <body>
+        <section>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{test_form.as_p}}
+                <input type="submit" value="确定上传">
+            </form>
+        </section>
+    </body>
+</html>

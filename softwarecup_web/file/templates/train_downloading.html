@@ -1,0 +1,33 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            训练生成模型的下载
+        </title>
+        <style>
+            body 
+            {   
+                margin: 0px;
+                background-image: url("{% static 'pics/bg2.png' %}");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                background-attachment:fixed;
+            }
+            section
+            {
+                padding-top: 120px;
+                text-align: center;
+                font-size: 25px;
+            }             
+        </style>        
+    </head>
+    <body>
+        <section>
+            <font color='red'><b>训练成功！</b></font><br>
+            <br>
+            <a href="{% url 'train_downloading' %}" target='_blank'><b>下载训练模型</b></a>
+        </section>
+    </body>
+</html>

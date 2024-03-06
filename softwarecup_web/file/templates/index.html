@@ -1,0 +1,38 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            软件杯主函数队伍A10赛题主页
+        </title>
+        <style>
+            body 
+            {   
+                margin: 0px;
+                background-image: url("{% static 'pics/bg2.png' %}");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                background-attachment:fixed;
+            }
+            section
+            {
+                padding-top: 120px;
+                text-align: center;
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <b>分布式系统故障诊断系统</b><br>
+            <br>
+            <a href="/train" target="_blank" title="点击进入训练模型界面">
+                <img src="{% static 'pics/train_pic.png' %}" alt="点击进入训练模型界面" width="300" height="150">
+            </a><br>
+            <a href="/test" target="_blank" title="点击进入预测分类界面">
+                <img src="{% static 'pics/pred_pic.png' %}" alt="点击进入预测分类界面" width="300" height="150">
+            </a>
+        </section>
+    </body>
+</html>

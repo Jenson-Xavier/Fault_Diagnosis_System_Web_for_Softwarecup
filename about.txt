@@ -1,0 +1,19 @@
+ps -aux:
+    Linux下查看当前所有进程
+
+lsof -i:xxxx:
+    Linux下网络查看xxxx端口上的占用情况
+
+kill -9 xxxxxx:
+    Linux下强行杀死进程id为xxxxxxx的进程
+
+nohup cmd &:
+    Linux启动后台永驻进程
+    cmd为启动对应进程的启动指令
+
+mysql -uroot -pxjx20030126:
+    当前环境下启动mysql
+    mysql 常用命令可见C语言中文网
+    
+python3 manage.py runserver 0.0.0.0:80：
+    Django启动公网访问服务
